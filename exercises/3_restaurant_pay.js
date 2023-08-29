@@ -10,8 +10,9 @@ import {expect} from 'chai'
 
 function getFriendPayShare(bill, friendQty) {
     const finalBill = bill + ?? ;
-    const payShare = ?? ;
-    return payShare;
+    const payShare = finalBill/?? ;
+    const roundedPayShare = Math.round(?? * ??)/100 ;
+    return roundedPayShare;
 }
 
 //Tests
@@ -35,7 +36,7 @@ describe('getPerFriendPayAmount', function() {
         },
     ].forEach(fixture => {
         it(`Scenario -> Bill: ${fixture.bill} | friendQty: ${fixture.friendQty}`, function() {
-            expect(getFriendPayShare(fixture.bill, fixture.friendQty)).to.closeTo(fixture.checker, 0.005);
+            expect(getFriendPayShare(fixture.bill, fixture.friendQty)).to.equal(fixture.checker);
         });
     });
 });
