@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "exercises": "node ./wrapper.cjs"
+    "exercises": "node ./wrapper.cjs",
+    "test:solved": "mocha ./solved"
   },
   "author": "",
   "license": "ISC",
