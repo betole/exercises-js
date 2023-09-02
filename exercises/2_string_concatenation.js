@@ -15,19 +15,8 @@ const number = 80934860;
 
 function phrase1(words) {
     let result = '';
-
-        for (let i = 0; i < words.length  ; i = i+1) {
-                
-        if (i < words.length -1){
-            result = result+words[i] +' '          
-        }
-        else{
-            result = result+words[i]
-        }
-
-    } 
+    //Your code goes here
     return result;
-
 }
 
 function phrase2(...words) {
