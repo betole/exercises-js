@@ -11,20 +11,31 @@ function getDivisors(number) {
 }
 
 describe('getDivisors', function() {
-    it('should handle positive number with several results', function() {
-        expect(getDivisors(10)).to.equal([1,2,5,10]);
+    [
+        {
+            title: 'should handle positive number with several results',
+            number: 10,
+            checker: [1,2,5,10]
+        },
+        {
+            title: 'should handle positive number with one result',
+            number: 1,
+            checker: [1]
+        },
+        {
+            title: 'should return empty array for zero',
+            number: 0,
+            checker: []
+        },
+        {
+            title: 'should return empty array for negative numbers',
+            number: -13,
+            checker: []
+        }
+    ].forEach(test => {
+        it(test.title, function() {
+            expect(getDivisors(test.number)).to.equal(test.checker);
+        });
     });
-
-    it('should handle positive number with one result', function() {
-        expect(getDivisors(1)).to.equal([1]);
-    });
-    
-    it('should return empty array for zero', function() {
-        expect(getDivisors(0)).to.equal([]);
-    });
-    
-    it('should return empty array for negative numbers', function() {
-        expect(getDivisors(-13)).to.equal([]);
-    });
-})
+});
 
